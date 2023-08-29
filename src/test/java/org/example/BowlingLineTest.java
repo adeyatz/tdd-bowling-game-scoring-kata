@@ -15,7 +15,7 @@ public class BowlingLineTest {
     }
 
     @Test
-    public void checkAllGutterRolls() {
+    public void checkSingleGutterRolls() {
 
         BowlingLine bowler = new BowlingLine (BOWLER_NAME);
         bowler.addStandardFrame (0, 0);
