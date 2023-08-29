@@ -160,4 +160,17 @@ public class BowlingLineTest {
 
         assertEquals(12, bowler.sum());
     }
+
+    // First Test for StrikeFrame
+    @Test
+    public void checkSingleStrikeWithGutterRoll() {
+
+        BowlingLine bowler = new BowlingLine (BOWLER_NAME);
+
+        bowler.addStrikeFrame();
+        bowler.addStandardFrame(0,0);
+
+        assertEquals (10, bowler.sum());
+    }
+
 }
