@@ -21,6 +21,11 @@ public class BowlingLine {
         frames.add(new StandardFrame (pinsKnockedDown, firstRoll, secondRoll));
     }
 
+
+    public void addSpareFrame(int firstRoll) {
+        frames.add(new SpareFrame (pinsKnockedDown, firstRoll));
+    }
+
     public int sum() {
         int total=0;
 
@@ -30,8 +35,4 @@ public class BowlingLine {
         return total;
     }
 
-    public void addSpareFrame(int firstRoll) {
-        pinsKnockedDown.add(firstRoll);
-        pinsKnockedDown.add(10 - firstRoll);
-    }
 }
