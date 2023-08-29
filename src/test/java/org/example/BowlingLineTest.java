@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BowlingLineTest {
 
     static final String BOWLER_NAME = "John Test";
+
+
     @Test
     public void checkBowlingLineConstructor () {
         BowlingLine bowler = new BowlingLine (BOWLER_NAME);
@@ -33,7 +35,7 @@ public class BowlingLineTest {
     }
 
     @Test
-    public void checkTemScoringRolls() {
+    public void checkTenScoringRolls() {
         int i;
 
         BowlingLine bowler = new BowlingLine (BOWLER_NAME);
@@ -46,7 +48,7 @@ public class BowlingLineTest {
 
 
     @Test
-    public void checkTemScoringRollsOf5() {
+    public void checkTenScoringRollsOf5() {
         int i;
 
         BowlingLine bowler = new BowlingLine (BOWLER_NAME);
@@ -58,7 +60,7 @@ public class BowlingLineTest {
     }
 
     @Test
-    public void checkTemScoringRollsOf9() {
+    public void checkTenScoringRollsOf9() {
         int i;
 
         BowlingLine bowler = new BowlingLine (BOWLER_NAME);
@@ -69,6 +71,39 @@ public class BowlingLineTest {
         assertEquals (90, bowler.sum());
     }
 
+    @Test
+    public void checkTenGutterRolls() {
+        int i;
 
+        BowlingLine bowler = new BowlingLine (BOWLER_NAME);
+        for (i = 0; i < 10; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+
+        assertEquals (0, bowler.sum());
+    }
+
+    // First test for Spare frame
+    @Test
+    public void checkSingleSpareWithGutterRoll() {
+
+        BowlingLine bowler = new BowlingLine (BOWLER_NAME);
+
+        bowler.addSpareFrame(5);
+        bowler.addStandardFrame(0,0);
+
+        assertEquals (10, bowler.sum());
+    }
+
+    @Test
+    public void checkSingleSpareWithStandardRoll() {
+
+        BowlingLine bowler = new BowlingLine (BOWLER_NAME);
+
+        bowler.addSpareFrame(5);
+        bowler.addStandardFrame(1,2);
+
+        assertEquals (14, bowler.sum());
+    }
 
 }

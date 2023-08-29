@@ -29,4 +29,9 @@ public class BowlingLine {
         }
         return total;
     }
+
+    public void addSpareFrame(int firstRoll) {
+        pinsKnockedDown.add(firstRoll);
+        pinsKnockedDown.add(10 - firstRoll);
+    }
 }
