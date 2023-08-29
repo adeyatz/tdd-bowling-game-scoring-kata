@@ -226,5 +226,89 @@ public class BowlingLineTest {
 
 
 
+    // First test for Bonus
+    @Test
+    public void checkSpareBonusBall() {
+
+        for (int i = 0; i < 9; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+        bowler.addSpareFrame(5);
+        bowler.addBonus (8);
+        assertEquals (18, bowler.sum());
+    }
+
+    @Test
+    public void checkStrikeBonusBalls() {
+
+        for (int i = 0; i < 9; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+        bowler.addStrikeFrame();
+        bowler.addBonus (8);
+        bowler.addBonus(3);
+        assertEquals (21, bowler.sum());
+    }
+
+
+    @Test
+    public void checkStrikeBonus10Bonus5() {
+
+        for (int i = 0; i < 9; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+        bowler.addStrikeFrame();
+        bowler.addBonus (10);
+        bowler.addBonus(5);
+        assertEquals (25, bowler.sum());
+    }
+
+
+    @Test
+    public void checkStrikeBonus10Bonus10() {
+
+        for (int i = 0; i < 9; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+        bowler.addStrikeFrame();
+        bowler.addBonus (10);
+        bowler.addBonus(10);
+        assertEquals (30, bowler.sum());
+    }
+
+    // Additional tests
+
+    @Test
+    public void checkAllSparesBonus5() {
+
+        for (int i = 0; i < 10; i++) {
+            bowler.addSpareFrame(8);
+        }
+        bowler.addBonus (5);
+        assertEquals (177, bowler.sum());
+    }
+
+
+    @Test
+    public void checkMaximumScore() {
+
+        for (int i = 0; i < 10; i++) {
+            bowler.addStrikeFrame();
+        }
+        bowler.addBonus (10);
+        bowler.addBonus (10);
+        assertEquals (300, bowler.sum());
+    }
+
+    @Test
+    public void checkAlternateStrikeSpare() {
+
+        for (int i = 0; i < 5; i++) {
+            bowler.addStrikeFrame();
+            bowler.addSpareFrame(6);
+        }
+        bowler.addBonus (10);
+        assertEquals (200, bowler.sum());
+    }
 
 }

@@ -31,6 +31,11 @@ public class BowlingLine {
     }
 
 
+    public void addBonus(int score) {
+        // Don't need to add to frames, since these scores form part of a previous frame
+        pinsKnockedDown.add(score);
+    }
+
 
     public int sum() {
         int total=0;
@@ -40,5 +45,4 @@ public class BowlingLine {
         }
         return total;
     }
-
 }
