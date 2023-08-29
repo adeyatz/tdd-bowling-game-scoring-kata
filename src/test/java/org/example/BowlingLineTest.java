@@ -106,4 +106,58 @@ public class BowlingLineTest {
         assertEquals (14, bowler.sum());
     }
 
+    @Test
+    public void checkSingleSpareWith9GutterRolls() {
+
+        BowlingLine bowler = new BowlingLine(BOWLER_NAME);
+
+        bowler.addSpareFrame(5);
+        for (int i = 1; i < 10; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+
+        assertEquals(10, bowler.sum());
+    }
+
+    @Test
+    public void checkSingleSpareWithScoreThenGutterRolls() {
+
+        BowlingLine bowler = new BowlingLine(BOWLER_NAME);
+
+        bowler.addSpareFrame(5);
+        bowler.addStandardFrame(1,0);
+        for (int i = 2; i < 10; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+
+        assertEquals(12, bowler.sum());
+    }
+
+    @Test
+    public void checkSingleSpareNineOneWithScoreThenGutterRolls() {
+
+        BowlingLine bowler = new BowlingLine(BOWLER_NAME);
+
+        bowler.addSpareFrame(9);
+        bowler.addStandardFrame(1,0);
+        for (int i = 2; i < 10; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+
+        assertEquals(12, bowler.sum());
+    }
+
+    @Test
+    public void checkSingleSpareZeroTenWithScoreThenGutterRolls() {
+
+        BowlingLine bowler = new BowlingLine(BOWLER_NAME);
+
+        bowler.addSpareFrame(0);
+        bowler.addStandardFrame(1,0);
+        for (int i = 2; i < 10; i++) {
+            bowler.addStandardFrame(0, 0);
+        }
+
+        assertEquals(12, bowler.sum());
+    }
 }
