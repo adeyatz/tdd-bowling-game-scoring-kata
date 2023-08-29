@@ -9,4 +9,11 @@ public class BowlingLine {
     public String getBowlerName() {
         return bowler;
     }
+
+    public void addStandardFrame(int i, int i1) {
+    }
+
+    public int sum() {
+        return 0;
+    }
 }
