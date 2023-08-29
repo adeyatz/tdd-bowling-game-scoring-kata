@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class StrikeFrame extends Frame {
     public StrikeFrame(ArrayList<Integer> pinsDownList) {
         super(pinsDownList);
-        pinScores.add(10);
+        pinScores.add(NUMBER_OF_PINS);
     }
 
     @Override

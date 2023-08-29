@@ -6,7 +6,7 @@ public class SpareFrame extends Frame {
     public SpareFrame(ArrayList<Integer> pinsDownList, int firstRoll) {
         super(pinsDownList);
         pinScores.add(firstRoll);
-        pinScores.add(10 - firstRoll);
+        pinScores.add(NUMBER_OF_PINS - firstRoll);
     }
 
     @Override
