@@ -3,9 +3,9 @@ package org.example;
 import java.util.ArrayList;
 
 public class StrikeFrame extends Frame {
-    public StrikeFrame(ArrayList<Integer> pinsDownList) {
-        super(pinsDownList);
-        pinScores.add(NUMBER_OF_PINS);
+    public StrikeFrame(ArrayList<Integer> pinScores) {
+        super(pinScores);
+        this.pinScores.add(NUMBER_OF_PINS);
     }
 
     @Override

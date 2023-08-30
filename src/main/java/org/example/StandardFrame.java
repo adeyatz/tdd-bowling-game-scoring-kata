@@ -3,10 +3,10 @@ package org.example;
 import java.util.ArrayList;
 
 public class StandardFrame extends Frame {
-    public StandardFrame(ArrayList<Integer> pinsDownList, int firstRoll, int secondRoll) {
-        super(pinsDownList);
-        pinScores.add(firstRoll);
-        pinScores.add(secondRoll);
+    public StandardFrame(ArrayList<Integer> pinScores, int firstRoll, int secondRoll) {
+        super(pinScores);
+        this.pinScores.add(firstRoll);
+        this.pinScores.add(secondRoll);
     }
 
     @Override

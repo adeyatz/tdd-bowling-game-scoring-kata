@@ -2,38 +2,32 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class BowlingLine {
-    private String bowler;
-    private ArrayList<Integer> pinsKnockedDown;
+public class BowlingLineCalculator {
+    private ArrayList<Integer> pinScores;
     private ArrayList<Frame> frames;
 
-    public BowlingLine(String bowler) {
-        this.bowler = bowler;
-        pinsKnockedDown = new ArrayList<Integer>();
+    public BowlingLineCalculator() {
+        pinScores = new ArrayList<Integer>();
         frames = new ArrayList<Frame>();
     }
 
-    public String getBowlerName() {
-        return bowler;
-    }
-
     public void addStandardFrame(int firstRoll, int secondRoll) {
-        frames.add(new StandardFrame (pinsKnockedDown, firstRoll, secondRoll));
+        frames.add(new StandardFrame (pinScores, firstRoll, secondRoll));
     }
 
 
     public void addSpareFrame(int firstRoll) {
-        frames.add(new SpareFrame (pinsKnockedDown, firstRoll));
+        frames.add(new SpareFrame (pinScores, firstRoll));
     }
 
     public void addStrikeFrame() {
-        frames.add(new StrikeFrame (pinsKnockedDown));
+        frames.add(new StrikeFrame (pinScores));
     }
 
 
     public void addBonus(int score) {
         // Don't need to add to frames, since these scores form part of a previous frame
-        pinsKnockedDown.add(score);
+        pinScores.add(score);
     }
 
 

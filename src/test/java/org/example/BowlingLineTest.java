@@ -5,21 +5,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BowlingLineTest {
+class BowlingLineTest {
 
-    static final String BOWLER_NAME = "John Test";
-    private BowlingLine bowler;
+    private BowlingLineCalculator bowler;
 
     @BeforeEach
     public void init() {
-        bowler = new BowlingLine(BOWLER_NAME);          // Arrange
+
+        bowler = new BowlingLineCalculator();          // Arrange
     }
 
 
     @Test
     public void checkBowlingLineConstructor () {
         assertNotNull (bowler);
-        assertEquals(BOWLER_NAME, bowler.getBowlerName());
     }
 
     @Test
